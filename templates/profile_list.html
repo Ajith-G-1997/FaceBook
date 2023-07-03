@@ -1,0 +1,11 @@
+{% extends 'user_dashboard.html' %}
+
+{% block content %}
+  <h1>Profile List</h1>
+  <div class="list-group">
+    {% for profile in profiles %}
+      <a href="{% url 'profile_detail' profile.user.username %}" class="list-group-item list-group-item-action">{{ profile.user.username }}</a>
+    {% endfor %}
+  </div>
+  <a href="{% url 'profile_create' %}" class="btn btn-primary mt-3">Create Profile</a>
+{% endblock %}

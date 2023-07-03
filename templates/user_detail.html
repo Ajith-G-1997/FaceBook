@@ -1,0 +1,10 @@
+{% extends 'user_dashboard.html' %}
+
+{% block content %}
+  <h1>User Detail</h1>
+  <p>Username: {{ user.username }}</p>
+  <p>Email: {{ user.email }}</p>
+  <p>Profile Picture: <img src="{{ user.profile_picture.url }}" alt="Profile Picture"></p>
+  <a href="{% url 'user_update' user.username %}" class="btn btn-primary">Update User</a>
+  <a href="{% url 'user_delete' user.username %}" class="btn btn-danger">Delete User</a>
+{% endblock %}

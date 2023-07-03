@@ -1,0 +1,18 @@
+{% extends 'user_dashboard.html' %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title">Profile Detail</h1>
+      <p class="card-text"><strong>Username:</strong> {{ profile.user.username }}</p>
+      <p class="card-text"><strong>Email:</strong> {{ profile.user.email }}</p>
+      <p class="card-text"><strong>Date of Birth:</strong> {{ profile.date_of_birth }}</p>
+      <p class="card-text"><strong>Gender:</strong> {{ profile.gender }}</p>
+      <p class="card-text"><strong>Bio:</strong> {{ profile.bio }}</p>
+      <p class="card-text"><strong>Website:</strong> {{ profile.website }}</p>
+      <p class="card-text"><strong>Location:</strong> {{ profile.location }}</p>
+      <a href="{% url 'profile_update' profile.user.username %}" class="btn btn-primary">Update Profile</a>
+      <a href="{% url 'profile_delete' profile.user.username %}" class="btn btn-danger">Delete Profile</a>
+    </div>
+  </div>
+{% endblock %}

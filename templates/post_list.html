@@ -1,0 +1,20 @@
+{% extends 'user_dashboard.html' %}
+
+{% block content %}
+  <h1>Post List</h1>
+  <div class="row">
+    {% for post in posts %}
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="{{ post.image_or_video.url }}" class="card-img-top" alt="Post Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ post }}</h5>
+            <p class="card-text">{{ post.caption }}</p>
+            <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+ 
+{% endblock %}

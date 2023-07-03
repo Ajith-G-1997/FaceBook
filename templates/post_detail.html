@@ -1,0 +1,20 @@
+{% extends 'user_dashboard.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <img src="{{ post.image_or_video.url }}" class="card-img-top" alt="Image or Video">
+          <div class="card-body">
+            <h5 class="card-title">{{ post }}</h5>
+            <p class="card-text">User: {{ post.user.username }}</p>
+            <p class="card-text">Caption: {{ post.caption }}</p>
+            <a href="{% url 'post_update' post.id %}" class="btn btn-primary">Update Post</a>
+            <a href="{% url 'post_delete' post.id %}" class="btn btn-danger">Delete Post</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

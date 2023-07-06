@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home'%}">Face Book</a>
+            <ul class="navbar-nav ml-auto">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_create'  %}">SignUp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+               
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% block content %}
+        <div class="jumbotron">
+            <div class="container">
+              <h1 class="display-3">Welcome to Face Book </h1>
+              <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+              <p><a class="btn btn-primary btn-lg" href="{% url 'user_create'  %}" role="button"> Create An Account &raquo;</a></p>
+            </div>
+          </div>
+
+          
+    
+            <hr>
+    
+          </div> <!-- /container -->
+    
+        </main>
+    
+        <footer class="container">
+          <p>&copy; it was developed By Ajith G </p>
+        </footer>
+        {% endblock %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
